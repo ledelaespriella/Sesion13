@@ -1,0 +1,27 @@
+{%extends 'base/baseEst.html' %}
+
+{%block title %} Ingreso {%endblock %}
+
+{%block content %}
+    <h1> Login</h1>
+
+    <form action='/login' id='formularioLogin' method='POST' novalidate>
+        {{form.hidden_tag()}}
+        <div>
+            {{ form.usuario.label }}
+            {{ form.usuario(size=20) }}
+        </div>
+        <div>
+            {{ form.clave.label }}
+            {{ form.clave(size=20) }}
+            <button class="form_boton" type="button" onclick="mostraContrasena()"> Mostrar </button>
+            
+            <br><br>
+        </div>
+     
+        <div>
+            {{ form.enviar() }}
+        </div>
+
+    </form>
+{%endblock %}

@@ -5,7 +5,7 @@
 {%block content %}
     <h1> Ingreso de estudiantes</h1>
 
-    <form action='/estudiante/save' id='formulario' method='POST'>
+    <form action='/estudiante/save' id='formulario' method='POST' novalidate>
         {{form.hidden_tag()}}
         <div class="">
             {{ form.documento.label }}

@@ -1,0 +1,34 @@
+{%extends 'base/baseEst.html' %}
+
+{%block title %} Consultar {%endblock %}
+
+{%block content %}
+<div>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ciclo</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            {%if row%}
+            <tbody>
+                <tr>
+                    <td> {{ row["documento"] }}  </td>
+                    <td> {{ row["nombre"] }}  </td>
+                    <td> {{ row["ciclo"] }}  </td>
+                    <td> {{ row["sexo"] }}  </td>
+                    <td> {{ row["estado"] }}  </td>
+                </tr>
+            </tbody>
+            {%endif %}
+        </table>
+    </div>
+
+</div>
+
+{%endblock %}

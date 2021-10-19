@@ -10,7 +10,12 @@ class formEstudiante(FlaskForm):
     estado=BooleanField('Estado')
     
     enviar=SubmitField('Enviar',render_kw={'onmouseover':'guardarEst()','class':'form_boton'})
-    consultar=SubmitField('Consultar',render_kw={'onmouseover':'consultarEst()','class':'form_boton'})
+    consultar=SubmitField('Consultar', validators=None,render_kw={'onmouseover':'consultarEst()','class':'form_boton'})
     listar=SubmitField('Listar',render_kw={'onmouseover':'listarEst()','class':'form_boton'})
     actualizar=SubmitField('Actualizar',render_kw={'onmouseover':'actualizarEst()','class':'form_boton'})
     eliminar=SubmitField('Eliminar',render_kw={'onmouseover':'eliminarrEst()','class':'form_boton'})
+    
+class formLogin(FlaskForm):
+    usuario = StringField('Usuario', validators=[DataRequired(message='No dejar vacio')], render_kw={'placeholder':'Usuario'} )
+    clave = PasswordField('Clave', validators=[DataRequired(message='No dejar vacio')], render_kw={'placeholder':'Contraseña', 'id':'password'} )
+    enviar = SubmitField('Enviar', render_kw={'class':'form_boton'} )
